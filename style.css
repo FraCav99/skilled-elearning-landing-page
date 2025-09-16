@@ -21,26 +21,33 @@
   --fs-7: 1.125rem;
 
   /* Spacing */
-  --spacing-100: 0.5rem;
-  --spacing-150: 0.75rem;
-  --spacing-200: 1rem;
-  --spacing-250: 1.25rem;
-  --spacing-300: 1.5rem;
-  --spacing-400: 2rem;
-  --spacing-500: 2.5rem;
-  --spacing-550: 2.75rem;
-  --spacing-600: 3rem;
-  --spacing-700: 3.5rem;
-  --spacing-800: 4rem;
-  --spacing-1000: 5rem;
-  --spacing-1600: 8rem;
-  --spacing-1800: 9rem;
+  --spacing-100: 0.5rem; /* 8px */
+  --spacing-150: 0.75rem; /* 12px */
+  --spacing-200: 1rem; /* 16px */
+  --spacing-250: 1.25rem; /* 20px */
+  --spacing-300: 1.5rem; /* 24px */
+  --spacing-400: 2rem; /* 32px */
+  --spacing-500: 2.5rem; /* 40px */
+  --spacing-550: 2.75rem; /* 44px */
+  --spacing-600: 3rem; /* 48px */
+  --spacing-700: 3.5rem; /* 56px */
+  --spacing-800: 4rem; /* 64px */
+  --spacing-1000: 5rem; /* 80px */
+  --spacing-1600: 8rem; /* 128px */
+  --spacing-1800: 9rem; /* 144px */
 }
 
 /* Local reset */
 a {
   text-decoration: none;
   color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  font-weight: 800;
 }
 
 body {
@@ -56,12 +63,45 @@ body {
   display: grid;
   grid-template-columns:
     [full-width-start] minmax(var(--dynamic-inline-spacing), 1fr)
-    [main-content-start] minmax(auto, 1440px) [main-content-end]
+    [main-content-start] minmax(auto, 1120px) [main-content-end]
     minmax(var(--dynamic-inline-spacing), 1fr) [full-width-end];
 }
 
 main {
   grid-column: main-content;
+}
+
+.hero {
+  display: grid;
+  row-gap: var(--spacing-600);
+  padding-block: var(--spacing-800);
+}
+
+.hero h1 {
+  font-size: var(--fs-1);
+  color: var(--blue-900);
+}
+
+.hero p {
+  margin-block: var(--spacing-300);
+  color: var(--grey);
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+  }
+
+  .hero div {
+    padding-block: var(--spacing-550);
+  }
+
+  .hero picture {
+    position: absolute;
+    right: 0;
+    transform: translate(42%, -20%);
+  }
 }
 
 .header,
@@ -84,6 +124,11 @@ main {
   justify-content: space-between;
 }
 
+.header .logo,
+.footer .logo {
+  width: 4h95rem;
+}
+
 .footer {
   background-color: var(--blue-900);
 }
@@ -96,8 +141,8 @@ main {
 }
 
 .cta-btn {
-  padding: var(--spacing-200) var(--spacing-400);
-  border-radius: 50px;
+  padding: var(--spacing-150) var(--spacing-300);
+  border-radius: 28px;
   font-size: var(--fs-7);
   font-weight: 700;
   color: white;
