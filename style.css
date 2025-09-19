@@ -83,25 +83,14 @@ main {
 }
 
 .hero p {
-  margin-block: var(--spacing-300);
+  font-size: var(--fs-5);
+  margin-top: var(--spacing-300);
   color: var(--grey);
 }
 
-@media screen and (min-width: 768px) {
-  .hero {
-    grid-template-columns: 1fr 1fr;
-    position: relative;
-  }
-
-  .hero div {
-    padding-block: var(--spacing-550);
-  }
-
-  .hero picture {
-    position: absolute;
-    right: 0;
-    transform: translate(42%, -20%);
-  }
+.hero a {
+  margin-top: var(--spacing-500);
+  display: inline-block;
 }
 
 .header,
@@ -126,11 +115,39 @@ main {
 
 .header .logo,
 .footer .logo {
-  width: 4h95rem;
+  width: 4.95rem;
+  height: 1.25rem;
 }
 
 .footer {
   background-color: var(--blue-900);
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    column-gap: var(--spacing-300);
+  }
+
+  .hero div {
+    padding-block: var(--spacing-550);
+  }
+
+  .hero picture {
+    position: absolute;
+    right: 0;
+    transform: translate(42%, -20%);
+    pointer-events: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header .logo,
+  .footer .logo {
+    width: auto;
+    height: auto;
+  }
 }
 
 /********************/
@@ -141,12 +158,18 @@ main {
 }
 
 .cta-btn {
-  padding: var(--spacing-150) var(--spacing-300);
+  padding: var(--spacing-200) var(--spacing-400);
   border-radius: 28px;
   font-size: var(--fs-7);
   font-weight: 700;
   color: white;
   position: relative;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .cta-btn {
+    padding: var(--spacing-150) var(--spacing-300);
+  }
 }
 
 .cta-btn--dark {
