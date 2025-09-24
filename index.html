@@ -20,116 +20,150 @@
     />
 
     <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="fonts.css" />
     <link rel="stylesheet" href="style.css" />
 
     <title>Frontend Mentor | Skilled e-learning landing page</title>
   </head>
 
   <body>
-    <div class="content-wrapper">
-      <nav>
-        <ul>
-          <li>
-            <a href="#"
-              ><img src="./assets/logo-dark.svg" alt="skilled homepage"
-            /></a>
-          </li>
-          <li><a href="#">Get Started</a></li>
-        </ul>
-      </nav>
+    <header class="header wrapper">
+      <a href="#"
+        ><img
+          src="./assets/logo-dark.svg"
+          alt="skilled homepage"
+          width="111"
+          height="28"
+          class="logo"
+      /></a>
+      <a href="#" class="cta-btn cta-btn--dark">Get Started</a>
+    </header>
 
-      <main>
-        <section class="hero">
-          <div>
-            <h1>Maximize skill, minimize budget</h1>
-            <p>
-              Our modern courses across a range of in-demand skills will give
-              you the knowledge you need to live the life you want.
-            </p>
+    <main>
+      <section class="wrapper hero">
+        <div>
+          <h1>Maximize skill, minimize budget</h1>
+          <p>
+            Our modern courses across a range of in-demand skills will give you
+            the knowledge you need to live the life you want.
+          </p>
 
-            <a href="#">Get Started</a>
-          </div>
+          <a href="#" class="cta-btn cta-btn--pink">Get Started</a>
+        </div>
 
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcset="./assets/image-hero-tablet.png"
-            />
-            <source
-              media="(min-width: 1200px)"
-              srcset="./assets/image-hero-desktop.png"
-            />
-            <img src="./assets/image-hero-mobile.png" alt="" />
-          </picture>
-        </section>
+        <picture>
+          <source
+            srcset="
+              ./assets/image-hero-desktop@2x.webp 2092w,
+              ./assets/image-hero-desktop.webp    1046w,
+              ./assets/image-hero-desktop@2x.png  2092w,
+              ./assets/image-hero-desktop.png     1046w
+            "
+            media="(min-width: 1200px)"
+          />
 
-        <div class="features">
-          <article class="main-card">
+          <source
+            srcset="
+              ./assets/image-hero-tablet@2x.webp 1390w,
+              ./assets/image-hero-tablet.webp     695w,
+              ./assets/image-hero-tablet@2x.png  1390w,
+              ./assets/image-hero-tablet.png      695w
+            "
+            media="(min-width: 768px)"
+          />
+
+          <source
+            srcset="
+              ./assets/image-hero-mobile@2x.webp 870w,
+              ./assets/image-hero-mobile.webp    435w,
+              ./assets/image-hero-mobile@2x.png  870w,
+              ./assets/image-hero-mobile.png     435w
+            "
+          />
+
+          <img
+            src="./assets/image-hero-mobile.png"
+            alt="A girl with a mug in front of a computer"
+          />
+        </picture>
+      </section>
+
+      <section class="courses">
+        <div class="wrapper courses-grid">
+          <div class="main-card">
             <h2>Check out our most popular courses!</h2>
-          </article>
+          </div>
 
           <article class="card">
             <img src="./assets/icon-animation.svg" alt="" />
-            <h2>Animation</h2>
+            <h3>Animation</h3>
             <p>
               Learn the latest animation techniques to create stunning motion
               design and captivate your audience.
             </p>
-            <a class="cta-link" href="#">Get started</a>
+            <div>
+              <a class="cta-link" href="#">Get started</a>
+            </div>
           </article>
 
           <article class="card">
             <img src="./assets/icon-design.svg" alt="" />
-            <h2>Desing</h2>
+            <h3>Design</h3>
             <p>
               Create beautiful, usable interfaces to help shape the future of
               how the web looks.
             </p>
-            <a class="cta-link" href="#">Get started</a>
+            <div>
+              <a class="cta-link" href="#">Get started</a>
+            </div>
           </article>
 
           <article class="card">
             <img src="./assets/icon-photography.svg" alt="" />
-            <h2>Photography</h2>
+            <h3>Photography</h3>
             <p>
               Explore critical fundamentals like lighting, composition, and
               focus to capture exceptional photos.
             </p>
-            <a class="cta-link" href="#">Get started</a>
+            <div>
+              <a class="cta-link" href="#">Get started</a>
+            </div>
           </article>
 
           <article class="card">
             <img src="./assets/icon-crypto.svg" alt="" />
-            <h2>Crypto</h2>
+            <h3>Crypto</h3>
             <p>
               All you need to know to get started investing in crypto. Go from
               beginner to advanced with this 54 hour course.
             </p>
-            <a class="cta-link" href="#">Get started</a>
+            <div>
+              <a class="cta-link" href="#">Get started</a>
+            </div>
           </article>
 
           <article class="card">
             <img src="./assets/icon-business.svg" alt="" />
-            <h2>Business</h2>
+            <h3>Business</h3>
             <p>
               A step-by-step playbook to help you start, scale, and sustain your
               business without outside investment.
             </p>
-            <a class="cta-link" href="#">Get started</a>
+            <div>
+              <a class="cta-link" href="#">Get started</a>
+            </div>
           </article>
         </div>
-      </main>
+      </section>
+    </main>
 
-      <footer>
-        <nav>
-          <li>
-            <a href="#"><img src="./assets/logo-light.svg" alt="skilled" /></a>
-          </li>
-          <li>
-            <a href="#">Get Started</a>
-          </li>
-        </nav>
-      </footer>
-    </div>
+    <footer class="footer">
+      <div class="wrapper">
+        <a href="#"
+          ><img src="./assets/logo-light.svg" alt="skilled" class="logo"
+        /></a>
+        <a href="#" class="cta-btn cta-btn--purple">Get Started</a>
+      </div>
+    </footer>
   </body>
 </html>
