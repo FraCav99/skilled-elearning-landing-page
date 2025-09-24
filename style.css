@@ -63,9 +63,12 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  overflow-x: clip;
+}
+
 .wrapper {
-  max-width: 1120px;
-  margin-inline: auto;
+  padding-inline: var(--spacing-250);
 }
 
 .hero {
@@ -88,6 +91,11 @@ body {
 .hero a {
   margin-top: var(--spacing-500);
   display: inline-block;
+}
+
+.hero picture {
+  max-width: 600px;
+  justify-self: center;
 }
 
 .courses {
@@ -142,19 +150,15 @@ body {
 }
 
 .header,
-.footer {
+.footer > .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding-block: clamp(
     var(--spacing-200),
     0.643rem + 1.786vw,
     var(--spacing-300)
   );
-}
-
-.header div,
-.footer div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .header .logo,
@@ -167,9 +171,18 @@ body {
   background-color: var(--blue-900);
 }
 
+/********************/
+/* MEDIA QUERIES    */
+/********************/
 @media screen and (min-width: 768px) {
+  .wrapper {
+    padding-inline: var(--spacing-550);
+  }
+
   .hero {
     grid-template-columns: 1fr 1fr;
+    column-gap: var(--spacing-300);
+    position: relative;
   }
 
   .hero div {
@@ -177,9 +190,10 @@ body {
   }
 
   .hero picture {
+    max-width: 810px;
     position: absolute;
     right: 0;
-    transform: translate(42%, -20%);
+    transform: translate(42%, -24%);
     pointer-events: none;
   }
 
@@ -202,6 +216,20 @@ body {
 }
 
 @media screen and (min-width: 1200px) {
+  .wrapper {
+    max-width: 1120px;
+    padding-inline: 0;
+    margin-inline: auto;
+  }
+
+  .hero {
+    column-gap: var(--spacing-400);
+  }
+
+  .hero picture {
+    transform: translate(47%, -27%);
+  }
+
   .header .logo,
   .footer .logo {
     width: auto;
